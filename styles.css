@@ -1,102 +1,129 @@
-/* Global Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #0D0D0D;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A7 Funding - Luxurious Trading</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">A7 Funding</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#plans">Funding Plans</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#apply" class="btn">Apply Now</a>
+    </nav>
 
-/* Navigation Bar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    background: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
+    <header id="home" class="hero-slider">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-content">
+            <h1 class="fade-in">Trade with Our Capital</h1>
+            <p class="fade-in">Join the most exclusive prop firm and get funded up to $400,000</p>
+            <a href="#plans" class="btn fade-in">Get Funded</a>
+        </div>
+    </header>
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+    <section id="plans" class="section">
+        <h2>Choose Your Funding Plan</h2>
+        <div class="plans">
+            <div class="plan fade-in">
+                <h3>$10,000 Account</h3>
+                <canvas class="cash-3d" id="cash-10k"></canvas>
+                <p>Profit Split: 80% | Phase 1 Target: 8% | Daily Loss: 5% | Max Loss: 10%</p>
+                <button class="btn">Apply Now</button>
+            </div>
+            <div class="plan fade-in">
+                <h3>$50,000 Account</h3>
+                <canvas class="cash-3d" id="cash-50k"></canvas>
+                <p>Profit Split: 85% | Phase 1 Target: 8% | Daily Loss: 5% | Max Loss: 10%</p>
+                <button class="btn">Apply Now</button>
+            </div>
+            <div class="plan fade-in">
+                <h3>$100,000 Account</h3>
+                <canvas class="cash-3d" id="cash-100k"></canvas>
+                <p>Profit Split: 90% | Phase 1 Target: 8% | Daily Loss: 5% | Max Loss: 10%</p>
+                <button class="btn">Apply Now</button>
+            </div>
+        </div>
+    </section>
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+    <section id="how-it-works" class="section how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step fade-in">✅ Pass the evaluation phase</div>
+            <div class="step fade-in">💰 Get funded with real capital</div>
+            <div class="step fade-in">📈 Trade and earn profits</div>
+        </div>
+    </section>
 
-/* Hero Section */
-.hero-slider {
-    height: 100vh;
-    background: url('luxury_trading.jpg') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+    <section id="about-ceo" class="section">
+        <h2>About the CEO</h2>
+        <p>Mohammed Farzin, a multi-millionaire and a successful business giant, has been in the Forex industry for over 8 years. With multiple businesses across different sectors, he founded A7 Funding to help traders reach financial freedom.</p>
+    </section>
 
-.hero-content h1 {
-    font-size: 48px;
-    font-weight: bold;
-    color: gold;
-}
+    <section id="payment-methods" class="section">
+        <h2>Payment Methods</h2>
+        <p>We accept Crypto, Debit Card, Credit Card, PayPal, and Bank Transfers.</p>
+    </section>
 
-.hero-content p {
-    font-size: 22px;
-    color: white;
-}
+    <section id="faq" class="section">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to the most common queries regarding our funding program.</p>
+    </section>
 
-.btn {
-    background-color: gold;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
+    <section id="contact" class="section contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
 
-/* Funding Plans */
-.plans {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 10%;
-}
+    <footer>
+        <p>&copy; 2025 A7 Funding. All rights reserved.</p>
+    </footer>
 
-.plan {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 30%;
-}
+    <script>
+        gsap.from(".fade-in", { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
 
-.plan h3 {
-    font-size: 28px;
-    color: gold;
-}
+        function create3DModel(canvasId) {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(canvasId), alpha: true });
+            renderer.setSize(150, 150);
+            document.getElementById(canvasId).appendChild(renderer.domElement);
 
-/* About CEO */
-#about-ceo {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 50px 10%;
-    text-align: center;
-}
+            const geometry = new THREE.BoxGeometry(1, 0.5, 0.1);
+            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            const cash = new THREE.Mesh(geometry, material);
+            scene.add(cash);
 
-/* FAQ Section */
-#faq {
-    padding: 50px 10%;
-    text-align: center;
-}
+            camera.position.z = 2;
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: black;
-}
+            function animate() {
+                requestAnimationFrame(animate);
+                cash.rotation.y += 0.02;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        create3DModel("cash-10k");
+        create3DModel("cash-50k");
+        create3DModel("cash-100k");
+    </script>
+</body>
+</html>
