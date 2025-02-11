@@ -6,7 +6,7 @@ function create3DModel(canvasId) {
 
     const canvas = document.getElementById(canvasId);
     if (canvas) {
-        canvas.innerHTML = ""; // Clear any existing content
+        canvas.innerHTML = "";
         canvas.appendChild(renderer.domElement);
     }
 
@@ -26,7 +26,7 @@ function create3DModel(canvasId) {
     animate();
 }
 
-// Call this function for each canvas element
-document.addEventListener("DOMContentLoaded", function () {
-    create3DModel("canvas-id"); // Replace "canvas-id" with your actual HTML element ID
-});
+// Initialize all canvas elements
+create3DModel('canvas1');
+create3DModel('canvas2');
+create3DModel('canvas3');
