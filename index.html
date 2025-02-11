@@ -24,9 +24,9 @@
 
     <header id="home" class="hero-slider">
         <div class="slider">
-            <img src="background1.jpg" alt="Luxurious Trading Background">
-            <img src="background2.jpg" alt="Trading Capital">
-            <img src="background3.jpg" alt="Financial Growth">
+            <div><img src="background1.jpg" alt="Luxurious Trading Background"></div>
+            <div><img src="background2.jpg" alt="Trading Capital"></div>
+            <div><img src="background3.jpg" alt="Financial Growth"></div>
         </div>
         <div class="hero-content">
             <h1>Trade with Our Capital</h1>
@@ -89,5 +89,18 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: false,
+                fade: true,
+                speed: 1000
+            });
+        });
+    </script>
 </body>
 </html>
