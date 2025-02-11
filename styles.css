@@ -1,114 +1,38 @@
-/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0a0a0a;
-    color: #fff;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
-/* Hero Section */
 .hero {
-    background: url('images/luxury-bg.jpg') no-repeat center center/cover;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
+    padding: 50px 20px;
 }
 
-.hero-content h1 {
-    font-size: 48px;
-    text-transform: uppercase;
-    font-weight: bold;
-    animation: fadeInDown 1s ease-in-out;
+.trading-slider {
+    margin: 20px 0;
 }
 
-.hero-content p {
-    font-size: 22px;
-    animation: fadeInUp 1.2s ease-in-out;
-}
-
-/* Slider */
-.hero-slider {
-    position: absolute;
-    bottom: 20px;
-    width: 80%;
-    margin: auto;
-}
-
-.hero-slider img {
-    width: 100%;
+.trading-slider img {
+    width: 300px;
+    height: 150px;
+    margin: 10px;
     border-radius: 10px;
 }
 
-/* About Section */
-.about {
-    padding: 50px 20px;
-    font-size: 20px;
+.why-choose {
+    margin-top: 30px;
 }
 
-/* 3D Canvas Section */
-.threeD-section {
-    padding: 50px 0;
-}
-
-.canvas-wrapper {
+.canvas-container {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 canvas {
     width: 150px;
     height: 150px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-/* Pricing Section */
-.pricing {
-    background-color: #111;
-    padding: 50px 0;
-}
-
-.pricing-plans {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.plan {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    transition: transform 0.3s ease;
-}
-
-.plan:hover {
-    transform: scale(1.1);
-}
-
-.plan h3 {
-    font-size: 24px;
-    color: #ffcc00;
-}
-
-.plan p {
-    font-size: 18px;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    border: 1px solid white;
 }
