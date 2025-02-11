@@ -1,33 +1,47 @@
-function create3DModel(canvasID) {
-    const canvas = document.getElementById(canvasID);
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+document.addEventListener("DOMContentLoaded", function () {
+    // Hero Slider
+    $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        arrows: false,
+        fade: true,
+    });
 
-    renderer.setSize(200, 200);
-    camera.position.z = 3;
+    // GSAP Animations
+    gsap.from(".hero-content h1", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
+    gsap.from(".hero-content p", { duration: 1.5, y: -30, opacity: 0, delay: 0.5, ease: "power2.out" });
+    gsap.from(".hero-content .btn", { duration: 2, scale: 0.5, opacity: 0, delay: 1, ease: "elastic" });
 
-    // 3D Object (Cube)
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0xFFD700, metalness: 1, roughness: 0.5 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    // 3D Cash Model
+    function create3DModel(canvasId) {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(150, 150);
+        document.getElementById(canvasId).appendChild(renderer.domElement);
 
-    // Lighting
-    const light = new THREE.PointLight(0xffffff, 2, 100);
-    light.position.set(2, 2, 5);
-    scene.add(light);
+        const light = new THREE.AmbientLight(0xffffff);
+        scene.add(light);
 
-    // Animation
-    function animate() {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
+        const loader = new THREE.GLTFLoader();
+        loader.load('cash.glb', function (gltf) {
+            const model = gltf.scene;
+            model.scale.set(2, 2, 2);
+            scene.add(model);
+            
+            function animate() {
+                requestAnimationFrame(animate);
+                model.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            }
+            animate();
+        });
+
+        camera.position.z = 5;
     }
-    animate();
-}
 
-create3DModel("canvas1");
-create3DModel("canvas2");
-create3DModel("canvas3");
+    create3DModel('cash-10k');
+    create3DModel('cash-50k');
+    create3DModel('cash-100k');
+});
