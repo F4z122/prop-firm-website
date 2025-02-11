@@ -1,105 +1,114 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #0d0d0d;
-    color: white;
+    background-color: #0a0a0a;
+    color: #fff;
+    text-align: center;
 }
 
-.navbar {
+/* Hero Section */
+.hero {
+    background: url('images/luxury-bg.jpg') no-repeat center center/cover;
+    height: 500px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    background: #1a1a1a;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: gold;
-}
-
-.hero-slider {
+    text-align: center;
     position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url('luxury-trading-bg.jpg') center/cover no-repeat;
 }
 
-.hero-content {
-    text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+.hero-content h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: fadeInDown 1s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-content p {
+    font-size: 22px;
+    animation: fadeInUp 1.2s ease-in-out;
 }
 
-.section {
-    padding: 60px 20px;
-    text-align: center;
+/* Slider */
+.hero-slider {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    margin: auto;
 }
 
-.plans {
+.hero-slider img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    font-size: 20px;
+}
+
+/* 3D Canvas Section */
+.threeD-section {
+    padding: 50px 0;
+}
+
+.canvas-wrapper {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
+}
+
+canvas {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* Pricing Section */
+.pricing {
+    background-color: #111;
+    padding: 50px 0;
+}
+
+.pricing-plans {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
 .plan {
     background: #222;
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
-    transition: transform 0.3s;
+    width: 200px;
+    transition: transform 0.3s ease;
 }
 
 .plan:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-.btn {
-    display: inline-block;
-    background: gold;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+.plan h3 {
+    font-size: 24px;
+    color: #ffcc00;
 }
 
-.btn:hover {
-    background: darkgoldenrod;
+.plan p {
+    font-size: 18px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
