@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -25,18 +26,11 @@
 
     <!-- Hero Section with Slider -->
     <header id="home" class="hero-slider">
-        <div class="slide" style="background-image: url('luxury1.jpg');">
+        <div class="slide" style="background-image: url('luxury_trading.jpg');">
             <div class="hero-content">
                 <h1>Trade with Our Capital</h1>
                 <p>Join the most exclusive prop firm and get funded up to $500,000</p>
                 <a href="#plans" class="btn">Get Funded</a>
-            </div>
-        </div>
-        <div class="slide" style="background-image: url('luxury2.jpg');">
-            <div class="hero-content">
-                <h1>Exclusive Trading Benefits</h1>
-                <p>High profit splits, risk management, and personalized support</p>
-                <a href="#plans" class="btn">Learn More</a>
             </div>
         </div>
     </header>
@@ -46,19 +40,19 @@
         <h2>Choose Your Funding Plan</h2>
         <div class="plans">
             <div class="plan">
-                <img src="dollars1.jpg" alt="Money">
+                <img src="luxury_trading.jpg" alt="Money">
                 <h3>$10,000 Account</h3>
                 <p>Profit Split: 80%</p>
                 <button class="btn">Apply Now</button>
             </div>
             <div class="plan">
-                <img src="dollars2.jpg" alt="Money">
+                <img src="luxury_trading.jpg" alt="Money">
                 <h3>$50,000 Account</h3>
                 <p>Profit Split: 85%</p>
                 <button class="btn">Apply Now</button>
             </div>
             <div class="plan">
-                <img src="dollars3.jpg" alt="Money">
+                <img src="luxury_trading.jpg" alt="Money">
                 <h3>$100,000 Account</h3>
                 <p>Profit Split: 90%</p>
                 <button class="btn">Apply Now</button>
@@ -95,13 +89,14 @@
         $(document).ready(function(){
             $('.hero-slider').slick({
                 autoplay: true,
-                autoplaySpeed: 3000,
+                autoplaySpeed: 2500,
                 dots: true,
                 arrows: false,
-                fade: true
+                fade: true,
+                infinite: true
             });
 
-            $('.fade-in').each(function(i){
+            $('.fade-in').css('opacity', 0).each(function(i){
                 $(this).delay(i * 500).animate({ opacity: 1 }, 1000);
             });
         });
