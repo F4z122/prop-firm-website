@@ -3,78 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A7 Funding - Luxurious Prop Firm</title>
-    
-    <!-- Link to CSS -->
+    <title>A7 Funding - Luxurious Trading</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Load Three.js for 3D animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-    <!-- Load jQuery and Slick.js for the slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to A7 Funding</h1>
-            <p>The Most Luxurious Prop Firm</p>
-        </div>
-        <div class="hero-slider">
-            <img src="images/slide1.jpg" alt="Trading Slide 1">
-            <img src="images/slide2.jpg" alt="Trading Slide 2">
-            <img src="images/slide3.jpg" alt="Trading Slide 3">
-        </div>
-    </section>
+    <header>
+        <h1>WELCOME TO A7 FUNDING</h1>
+        <p>The Most Luxurious Prop Firm</p>
+    </header>
 
-    <!-- About Section -->
-    <section class="about">
+    <div class="trading-slider">
+        <img src="images/trading-slide1.jpg" alt="Trading Slide 1">
+        <img src="images/trading-slide2.jpg" alt="Trading Slide 2">
+        <img src="images/trading-slide3.jpg" alt="Trading Slide 3">
+    </div>
+
+    <section class="why-choose">
         <h2>Why Choose A7 Funding?</h2>
         <p>We provide elite traders with the capital they need to maximize profits and achieve financial freedom.</p>
     </section>
 
-    <!-- 3D Canvas Section -->
-    <section class="threeD-section">
-        <h2>Explore Our 3D Trading Experience</h2>
-        <div class="canvas-wrapper">
-            <canvas id="canvas1"></canvas>
-            <canvas id="canvas2"></canvas>
-            <canvas id="canvas3"></canvas>
-        </div>
+    <!-- 3D Canvas Sections -->
+    <section class="canvas-container">
+        <canvas id="canvas1"></canvas>
+        <canvas id="canvas2"></canvas>
+        <canvas id="canvas3"></canvas>
     </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing">
-        <h2>Our Funding Plans</h2>
-        <div class="pricing-plans">
-            <div class="plan">
-                <h3>Starter</h3>
-                <p>$25,000 Account</p>
-            </div>
-            <div class="plan">
-                <h3>Advanced</h3>
-                <p>$50,000 Account</p>
-            </div>
-            <div class="plan">
-                <h3>Pro</h3>
-                <p>$100,000 Account</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Link to JavaScript -->
-    <script src="script.js"></script>
-
-    <!-- Initialize 3D Models -->
-    <script>
-        create3DModel('canvas1');
-        create3DModel('canvas2');
-        create3DModel('canvas3');
-    </script>
 
 </body>
 </html>
