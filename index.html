@@ -28,9 +28,9 @@
     <header id="home" class="hero-slider">
         <canvas id="heroCanvas"></canvas>
         <div class="hero-content">
-            <h1>Trade with Our Capital</h1>
-            <p>Join the most exclusive prop firm and get funded up to $400,000</p>
-            <a href="#plans" class="btn">Get Funded</a>
+            <h1 class="fade-in">Trade with Our Capital</h1>
+            <p class="fade-in">Join the most exclusive prop firm and get funded up to $400,000</p>
+            <a href="#plans" class="btn fade-in">Get Funded</a>
         </div>
     </header>
 
@@ -39,16 +39,19 @@
         <div class="plans">
             <div class="plan fade-in">
                 <h3>$10,000 Account</h3>
+                <canvas class="cash-3d" id="cash-10k"></canvas>
                 <p>Profit Split: 80% | Phase 1 Target: 8% | Daily Loss: 5% | Max Loss: 10%</p>
                 <button class="btn">Apply Now</button>
             </div>
             <div class="plan fade-in">
                 <h3>$50,000 Account</h3>
+                <canvas class="cash-3d" id="cash-50k"></canvas>
                 <p>Profit Split: 85% | Phase 1 Target: 8% | Daily Loss: 5% | Max Loss: 10%</p>
                 <button class="btn">Apply Now</button>
             </div>
             <div class="plan fade-in">
                 <h3>$100,000 Account</h3>
+                <canvas class="cash-3d" id="cash-100k"></canvas>
                 <p>Profit Split: 90% | Phase 1 Target: 8% | Daily Loss: 5% | Max Loss: 10%</p>
                 <button class="btn">Apply Now</button>
             </div>
@@ -92,5 +95,35 @@
     <footer>
         <p>&copy; 2025 A7 Funding. All rights reserved.</p>
     </footer>
+
+    <script>
+        gsap.from(".fade-in", { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
+
+        function create3DModel(canvasId) {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(canvasId), alpha: true });
+            renderer.setSize(150, 150);
+            document.getElementById(canvasId).appendChild(renderer.domElement);
+
+            const geometry = new THREE.BoxGeometry(1, 0.5, 0.1);
+            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            const cash = new THREE.Mesh(geometry, material);
+            scene.add(cash);
+
+            camera.position.z = 2;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                cash.rotation.y += 0.02;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        create3DModel("cash-10k");
+        create3DModel("cash-50k");
+        create3DModel("cash-100k");
+    </script>
 </body>
 </html>
